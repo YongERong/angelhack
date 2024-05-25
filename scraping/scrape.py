@@ -74,8 +74,8 @@ def scrape_page(links):
         # return error message
     return out
 
-def main():
-    query = input("Input a search query.")
+def main(textinput):
+    query = textinput
     search_links = google_search(query, GOOGLE_SEARCH_API_KEY, GOOGLE_SEARCH_ENGINE_ID, num=2)
     data = scrape_page(search_links)
     return data
