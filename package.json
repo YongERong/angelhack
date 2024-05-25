@@ -2,6 +2,8 @@
   "name": "angelhack",
   "version": "0.1.0",
   "private": true,
+  "proxy":"http://127.0.0.1:3000",
+  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,9 +11,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/next-js": "^2.2.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "axios": "^1.7.2",
+    "framer-motion": "^11.2.6",
+    "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.3"
+    "react-player": "^2.16.0"
   },
   "devDependencies": {
     "eslint": "^8",
