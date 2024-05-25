@@ -33,6 +33,6 @@ def translate(text, currLang, targetLang):
         return 0
 
 
-file = open("newsarticle.txt", "r").read()
-summarisedText = summarise(file)
-translate(summarisedText, "en", "ch")
+#file = open("newsarticle.txt", "r").read()
+#summarisedText = summarise(file)
+#translate(summarisedText, "en", "ch")

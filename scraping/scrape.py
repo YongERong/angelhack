@@ -5,10 +5,7 @@ import requests
 from newsapi import NewsApiClient
 from gnews import GNews
 
-
-
 load_dotenv()
-
 
 GOOGLE_SEARCH_API_KEY = os.getenv("GOOGLE_SEARCH_API_KEY")
 GOOGLE_SEARCH_ENGINE_ID = os.getenv("GOOGLE_SEARCH_ENGINE_ID")
@@ -73,11 +70,13 @@ def scrape_page(links):
         # return error message
     return out
 
-
-if __name__ == "__main__":
+def main():
     query = input("Input a search query.")
     search_links = google_search(
     query, GOOGLE_SEARCH_API_KEY, GOOGLE_SEARCH_ENGINE_ID, num=10)
-    data = scrape_page(search_links[:1])
+    data = scrape_page(search_links)
+    return data
 
+if __name__ == "__main__":
+    main()
     
