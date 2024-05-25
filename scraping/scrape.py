@@ -16,7 +16,9 @@ def google_search(search_term, api_key, cse_id, **kwargs):
     try:
         service = build("customsearch", "v1", developerKey=api_key)
         res = service.cse().list(q=search_term, cx=cse_id, **kwargs).execute()
+        print(res)
         links = [result["link"] for result in res["items"]]
+        print(links)
         
     except (TimeoutError, IndexError) as e:
         print(e)
@@ -60,10 +62,12 @@ def scrape_page(links):
                 headers=headers,
                 json={"url": link, "element_prompts": ["text"]},
             )
+            print(res)
 
             raw_data = res.json()
             for i in raw_data["data"]:
                 out.append(i["results"][0]["text"])
+            print(out)
 
     except(TimeoutError, IndexError, KeyError) as e:
         print(e)
@@ -72,8 +76,7 @@ def scrape_page(links):
 
 def main():
     query = input("Input a search query.")
-    search_links = google_search(
-    query, GOOGLE_SEARCH_API_KEY, GOOGLE_SEARCH_ENGINE_ID, num=10)
+    search_links = google_search(query, GOOGLE_SEARCH_API_KEY, GOOGLE_SEARCH_ENGINE_ID, num=2)
     data = scrape_page(search_links)
     return data
 

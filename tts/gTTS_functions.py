@@ -3,8 +3,8 @@ import os
 
 def ensure_audio_directory():
     """Ensure the audio directory exists."""
-    if not os.path.exists('audio2'):
-        os.makedirs('audio2')
+    if not os.path.exists('audio'):
+        os.makedirs('audio')
 
 def generate_audio(text, lang, accent):
     """Generate audio file from text in the specified language and accent."""
