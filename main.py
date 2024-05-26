@@ -38,4 +38,4 @@ def search():
     return send_file("audio2/gtts_en_uk.mp3", mimetype="audio/mp3")
 
 if __name__ == '__main__':  
-   app.run()
+   app.run(host="0.0.0.0", port="5000")
