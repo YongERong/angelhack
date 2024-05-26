@@ -17,17 +17,18 @@ export default function Home() {
   const sendQuery = async () => {
     console.log("sending query");
     setIsLoading(true);
-    await axios.get(`http://127.0.0.1:5000?language=${language}&search_query=${searchQuery}`,{responseType: "blob"})
-      .then((res) => {
-        console.log("no u");
-        console.log(res.data);
-        setSrc(URL.createObjectURL(res.data));
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log("axios error:", error);
-        setIsLoading(false);
-      });
+    // await axios.get(`http://127.0.0.1:5000?language=${language}&search_query=${searchQuery}`,{responseType: "blob"})
+    //   .then((res) => {
+    //     console.log(res.data);
+    //     setSrc(URL.createObjectURL(res.data));
+    //     setIsLoading(false);
+    //   })
+    //   .catch((error) => {
+    //     console.log("axios error:", error);
+    //     setIsLoading(false);
+    //   });
+    setSrc("../../audio2/gtts_zh-TW_tw.mp3")
+    setIsLoading(false);
     
   };
 
