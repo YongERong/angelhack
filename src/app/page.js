@@ -27,7 +27,7 @@ export default function Home() {
     //     console.log("axios error:", error);
     //     setIsLoading(false);
     //   });
-    setSrc("../../audio2/gtts_zh-TW_tw.mp3")
+    setSrc("/gtts_zh-TW_tw.mp3")
     setIsLoading(false);
     
   };
